@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  .login-page
+    .form
+      form#loginForm.login-form(action="/API_GET" method="POST" enctype="application/x-www-form-urlencoded" accept-charset="UTF-8")
+
+        input#inputIP(data-qa='inputIP' type='text' name='inputIP' value='192.168.12.162')
+
+        input#inputPort(data-qa='inputPort' type='text' name='inputPort' value='9200')
+
+        input#inputDir(data-qa='inputDir' type='text' name='inputDir' value='/_cat/indices')
+
+        button#get_api(data-qa='submit' type='submit') GET API
+     span 
+        h3(data-qa='message' style='color:red') #{message}
+    .form
+      form#loginForm.login-form(action="/API_GET" method="POST" enctype="application/x-www-form-urlencoded" accept-charset="UTF-8")
+
+        input#inputIP(data-qa='inputIP' type='text' name='inputIP' value='192.168.12.133')
+
+        input#inputPort(data-qa='inputPort' type='text' name='inputPort' value='9200')
+
+        input#inputDir(data-qa='inputDir' type='text' name='inputDir' value='')
+
+        button#get_api(data-qa='submit' type='submit') GET API
+     span 
+        h3(data-qa='message' style='color:red') #{message}
+
+
+
