@@ -13,7 +13,9 @@ block content
 
         button#get_api(data-qa='submit' type='submit') GET API
      span 
-        h3(data-qa='message' style='color:red') #{message}
+        h3(data-qa='message' style='color:red') #{message_error}
+     span 
+        h3(data-qa='message' style='color:green') #{message_result}        
     .form
       form#loginForm.login-form(action="/API_GET" method="POST" enctype="application/x-www-form-urlencoded" accept-charset="UTF-8")
 
@@ -25,7 +27,9 @@ block content
 
         button#get_api(data-qa='submit' type='submit') GET API
      span 
-        h3(data-qa='message' style='color:red') #{message}
+        h3(data-qa='message' style='color:red') #{message_error}
+     span 
+        h3(data-qa='message' style='color:green') #{message_result} 
 
 
 

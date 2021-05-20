@@ -2,12 +2,9 @@ var express = require('express');
 var router = express.Router();
 var calls = require('../data/api_query');
 
-
 router.get('/', (req, res) => {
   res.render('index')
 });
-
-
 
 // API CALLS
 router.post('/API_GET', (req, res) => {
@@ -25,23 +22,31 @@ router.post('/API_GET', (req, res) => {
     if (!resu) {
       //return 'Error de conexión';
       message1 = 'Error de conexión';
-      console.log("\x1b[1m",'valor de message1 ANTES: ' + JSON.stringify(message1));
+      //console.log("\x1b[1m",'valor de message1 ANTES: ' + JSON.stringify(message1));
       res.render('index', {
-        message: JSON.stringify(message1)
+        message_error: message1
       });
     } else {
-      message1 = resu ; 
-      console.log("\x1b[1m",'valor de message1 DESPUES: ' + JSON.stringify(message1));
+
+
+   //  message1 = () => {
+   //    for (var i = 0; i < resu.length; i++) {
+   //      var resu_string = resu_string + '' +resu[i]+'\n\n';
+   //    }
+   //    return resu_string;
+   //  };
+
+message1 = resu;
+      //console.log('resultado: '+message1);
+      //message1.forEach(element => console.log(element))
+      //console.log("\x1b[1m",'valor de message1 DESPUES: ' + JSON.stringify(message1));
       res.render('index', {
-        message: JSON.stringify(message1)
+        //message_result: JSON.stringify(message1), 
+        message_result: message1
       });
     };
 
   };
-render_view();
-
-
+  render_view();
 });
-
-
 module.exports = router;
