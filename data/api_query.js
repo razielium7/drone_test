@@ -16,7 +16,9 @@ var call_api = async (api_IP, api_port, api_dir) => {
                 } else {
                     //var resback = ""[]"";
                     //console.log('ESA ES LA RESPUESTA COMPLETA: '+JSON.stringify(response  ));
-                    var resback = response.body;
+                    var resback = response.body.replace(/\n/g,'AAAAAAAAAAAA');
+                    // !!! SUSTITUYE TODAS APARIENCIAS DE \n por AAAAAAAA
+                    //var resback = response.body;
                     //var resback = response.body.split('\n');
                     //resback = response.body;
 
