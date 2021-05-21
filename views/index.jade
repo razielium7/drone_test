@@ -1,35 +1,50 @@
 extends layout
-
 block content
-  .login-page
-    .form
-      form#loginForm.login-form(action="/API_GET" method="POST" enctype="application/x-www-form-urlencoded" accept-charset="UTF-8")
 
-        input#inputIP(data-qa='inputIP' type='text' name='inputIP' value='192.168.12.162')
 
-        input#inputPort(data-qa='inputPort' type='text' name='inputPort' value='9200')
 
-        input#inputDir(data-qa='inputDir' type='text' name='inputDir' value='/_cat/indices')
+  .itsbody
+    .itsform
+      .form
+        form#loginForm.login-form(action="/API_GET" method="POST" enctype="application/x-www-form-urlencoded" accept-charset="UTF-8")
 
-        button#get_api(data-qa='submit' type='submit') GET API
-     span 
+          input#inputIP(data-qa='inputIP' type='text' name='inputIP' value='192.168.12.162')
+
+          input#inputPort(data-qa='inputPort' type='text' name='inputPort' value='9200')
+
+          input#inputDir(data-qa='inputDir' type='text' name='inputDir' value='/_cat/indices')
+
+          button#get_api(data-qa='submit' type='submit') GET API      
+      .form
+        form#loginForm.login-form(action="/API_GET" method="POST" enctype="application/x-www-form-urlencoded" accept-charset="UTF-8")
+
+          input#inputIP(data-qa='inputIP' type='text' name='inputIP' value='192.168.12.162')
+
+          input#inputPort(data-qa='inputPort' type='text' name='inputPort' value='9200')
+
+          input#inputDir(data-qa='inputDir' type='text' name='inputDir' value='')
+
+          button#get_api(data-qa='submit' type='submit') GET API
+      .form
+        form#loginForm.login-form(action="/API_GET" method="POST" enctype="application/x-www-form-urlencoded" accept-charset="UTF-8")
+
+          input#inputIP(data-qa='inputIP' type='text' name='inputIP' value='192.168.12.133')
+
+          input#inputPort(data-qa='inputPort' type='text' name='inputPort' value='9200')
+
+          input#inputDir(data-qa='inputDir' type='text' name='inputDir' value='')
+
+          button#get_api(data-qa='submit' type='submit' onclick="wait_message()") GET API        
+
+    .response  
+      span 
         h3(data-qa='message' style='color:red') #{message_error}
-     span 
-        h3(data-qa='message' style='color:green') #{message_result}        
-    .form
-      form#loginForm.login-form(action="/API_GET" method="POST" enctype="application/x-www-form-urlencoded" accept-charset="UTF-8")
+      span 
+        h3(data-qa='message' style='color:blue') #{message_result} 
+      span 
+        h3(data-qa='message' style='color:blue') #{message_mock} 
 
-        input#inputIP(data-qa='inputIP' type='text' name='inputIP' value='192.168.12.133')
-
-        input#inputPort(data-qa='inputPort' type='text' name='inputPort' value='9200')
-
-        input#inputDir(data-qa='inputDir' type='text' name='inputDir' value='')
-
-        button#get_api(data-qa='submit' type='submit') GET API
-     span 
-        h3(data-qa='message' style='color:red') #{message_error}
-     span 
-        h3(data-qa='message' style='color:green') #{message_result} 
-
-
-
+      if message_error
+        h3  Mala suerte       
+      else 
+        h3 Click it!                  
