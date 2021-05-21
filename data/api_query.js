@@ -14,8 +14,8 @@ var call_api = async (api_IP, api_port, api_dir) => {
                     console.log(error);
                     resolve();
                 } else {
-                    var resback = [];
-                    resback = response.body.split('\n');
+                    //var resback = [];
+                    var resback = response.body.split('\n');
                     //resback = response;
 
                     //console.log("\x1b[32m", "RESPUESTA DE API:  " + resback);

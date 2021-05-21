@@ -1,7 +1,6 @@
+script(src="/js/better_array.js")
 extends layout
 block content
-
-
 
   .itsbody
     .itsform
@@ -34,17 +33,30 @@ block content
 
           input#inputDir(data-qa='inputDir' type='text' name='inputDir' value='')
 
-          button#get_api(data-qa='submit' type='submit' onclick="wait_message()") GET API        
-
-    .response  
-      span 
-        h3(data-qa='message' style='color:red') #{message_error}
-      span 
-        h3(data-qa='message' style='color:blue') #{message_result} 
-      span 
-        h3(data-qa='message' style='color:blue') #{message_mock} 
-
+          button#get_api(data-qa='submit' type='submit' ) GET API      
+          
+            
+    .response
       if message_error
         h3  Mala suerte       
+      else if message_result
+        h3  Hecho!     
+        script(type="text/javascript").
+          //var aaa = message_result;
+          var bbb = 'Console_test';
+          //console.log(aaa);
+          console.log(bbb);
+          //h3=  Hecho! #{message_result}
+          //console.log(message_result);
+          //message_result.forEach(element => {console.log(element);});
       else 
-        h3 Click it!                  
+        h3 Click it!   
+      span 
+        h4(data-qa='message' style='color:red') #{message_error}
+      span 
+        h4(data-qa='message' style='color:blue') #{message_result}
+      span 
+        h4(data-qa='message' style='color:blue') #{message_mock} 
+
+
+
