@@ -14,9 +14,11 @@ var call_api = async (api_IP, api_port, api_dir) => {
                     console.log(error);
                     resolve();
                 } else {
-                    //var resback = [];
-                    var resback = response.body.split('\n');
-                    //resback = response;
+                    //var resback = ""[]"";
+                    //console.log('ESA ES LA RESPUESTA COMPLETA: '+JSON.stringify(response  ));
+                    var resback = response.body;
+                    //var resback = response.body.split('\n');
+                    //resback = response.body;
 
                     //console.log("\x1b[32m", "RESPUESTA DE API:  " + resback);
                     //return resback;

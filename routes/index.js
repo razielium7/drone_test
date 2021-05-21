@@ -20,32 +20,18 @@ router.post('/API_GET', (req, res) => {
   async function render_view() {
     var resu = await return_api_value();
     if (!resu) {
-      //return 'Error de conexión';
       message1 = 'Error de conexión';
-      //console.log("\x1b[1m",'valor de message1 ANTES: ' + JSON.stringify(message1));
       res.render('index', {
         message_error: message1
       });
     } else {
 
-
-   //  message1 = () => {
-   //    for (var i = 0; i < resu.length; i++) {
-   //      var resu_string = resu_string + '' +resu[i]+'\n\n';
-   //    }
-   //    return resu_string;
-   //  };
-
-message1 = resu;
-      //console.log('resultado: '+message1);
-      //message1.forEach(element => console.log(element))
-      //console.log("\x1b[1m",'valor de message1 DESPUES: ' + JSON.stringify(message1));
+      message1 = resu;
       res.render('index', {
-        //message_result: JSON.stringify(message1), 
+       // message_result: message1.join('%')
         message_result: message1
       });
     };
-
   };
   render_view();
 });

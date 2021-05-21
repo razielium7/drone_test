@@ -1,4 +1,3 @@
-script(src="/js/better_array.js")
 extends layout
 block content
 
@@ -40,14 +39,17 @@ block content
       if message_error
         h3  Mala suerte       
       else if message_result
-        h3  Hecho!     
+        h3  Hecho!  
         script(type="text/javascript").
+         var stringindices= #{message_result};
+         // var resback = stringindices.split('%');
           //var aaa = message_result;
-          var bbb = 'Console_test';
+          //var stringIndices =JSON.parse('!{message_result}');
+          //document.getElementById('listIndices').innerHTML= stringIndices;
           //console.log(aaa);
-          console.log(bbb);
-          //h3=  Hecho! #{message_result}
-          //console.log(message_result);
+          //console.log(listIndices);
+          //h3  Hecho! #{message_result}
+          console.log(stringindices);
           //message_result.forEach(element => {console.log(element);});
       else 
         h3 Click it!   
