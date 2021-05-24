@@ -40,8 +40,8 @@ block content
         h3  Mala suerte       
       else if message_result
         h3  Hecho!  
-        script(type="text/javascript").
-         var stringindices= !{message_result};
+        //script(type="text/javascript").
+         //var stringindices= !{message_result};
          // var resback = stringindices.split('%');
           //var aaa = message_result;
           //var stringIndices =JSON.parse('!{message_result}');
@@ -49,16 +49,16 @@ block content
           //console.log(aaa);
           //console.log(listIndices);
           //h3  Hecho! #{message_result}
-          console.log(stringindices);
+          //console.log(stringindices);
           //message_result.forEach(element => {console.log(element);});
       else 
         h3 Click it!   
       span 
-        h4(data-qa='message' style='color:red') #{message_error}
+        p(data-qa='message' style='color:red') #{message_error}
       span 
-        h4(data-qa='message' style='color:blue') #{message_result}
+        p(data-qa='message' style="word-wrap: break-word; white-space: pre-wrap; color:blue ") #{message_result}
       span 
-        h4(data-qa='message' style='color:blue') #{message_mock} 
+        p(data-qa='message' style='color:blue') #{message_mock} 
 
 
 
