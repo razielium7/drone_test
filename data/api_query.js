@@ -1,5 +1,4 @@
 var request = require('request');
-const app = require('../app');
 
 
 var call_api = async (api_IP, api_port, api_dir) => {
